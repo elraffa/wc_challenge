@@ -387,8 +387,8 @@ input,
 select,
 optgroup,
 textarea {
-	color: #404040;
-	font-family: "Yanone Kaffeesatz", "Helvetica Neue", sans-serif;
+	color: #161616;
+	font-family: "Lato", sans-serif;
 	font-size: 1rem;
 	line-height: 1.5;
 }
@@ -461,7 +461,7 @@ body {
 }
 
 hr {
-	background-color: #ccc;
+	background-color: #E7E7E7;
 	border: 0;
 	height: 1px;
 	margin-bottom: 1.5em;
