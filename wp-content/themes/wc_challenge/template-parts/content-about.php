@@ -9,10 +9,19 @@
 
 ?>
 
+<section class="about">
+
+		<div class="about__container"> 
+
+			<?php the_title( '<span class="about__title">', '</span>'); ?>
+			<h1 class="about__title">Meet Our <strong>Team<strong></h1>
+
+		</div> 
+	
+</section>
+
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-	<header class="entry-header">
-		<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
-	</header><!-- .entry-header -->
+
 
 	<?php wc_challenge_post_thumbnail(); ?>
 

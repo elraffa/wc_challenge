@@ -400,6 +400,19 @@ h4,
 h5,
 h6 {
 	clear: both;
+	font-family: "Yanone Kaffeesatz", "Helvetica Neue", sans-serif;
+}
+
+h1 {
+	font-size: 40px;
+	line-height: 60px;
+	font-weight: 400;
+}
+
+@media screen and (min-width: 900px) {
+	h1 {
+		font-size: 75px;
+	}
 }
 
 p {
@@ -452,6 +465,10 @@ ins {
 
 big {
 	font-size: 125%;
+}
+
+b, strong {
+	font-weight: 700;
 }
 
 /* Elements
