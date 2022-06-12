@@ -31,15 +31,19 @@
 
 				?>
 				<?php if( $the_query->have_posts() ): ?>
+					<div class="about__slider">
 					<?php while( $the_query->have_posts() ) : $the_query->the_post(); ?>
-						<div class="about__slider">
-							<div class="about__slider__image">
-								<?php the_post_thumbnail(); ?>
-							</div>							
-							<h3 ><?php the_title(); ?></h3>
-							<p><?php the_field('position'); ?></p>
-						</div><!-- about-slider -->
+
+							<div class="about__slider-member">
+								<div class="about__slider-image">
+									<?php the_post_thumbnail(); ?>
+								</div>							
+								<h3 ><?php the_title(); ?></h3>
+								<p class="about__slider-position"><?php the_field('position'); ?></p>
+							</div><!-- about-slider-member -->
+
 					<?php endwhile; ?>
+					</div><!-- about-slider -->
 				<?php endif; ?>
 
 				<?php wp_reset_query();	 // Restore global post data stomped by the_post(). ?>

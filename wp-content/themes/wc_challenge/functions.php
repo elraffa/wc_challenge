@@ -139,10 +139,17 @@ add_action( 'widgets_init', 'wc_challenge_widgets_init' );
  */
 function wc_challenge_scripts() {
 	wp_enqueue_style( 'wc_challenge-style', get_stylesheet_uri(), array(), _S_VERSION );
-	wp_enqueue_style(	'wc_challenge-google-fonts', 'https://fonts.googleapis.com/css2?family=Lato:wght@300;400&family=Yanone+Kaffeesatz:wght@400;700&display=swap', false );
+	wp_enqueue_style(	'wc_challenge-google-fonts', 'https://fonts.googleapis.com/css2?family=fonts.googleapis.com/css2?family=Lato:wght@300;400&family=Yanone+Kaffeesatz:wght@400;700&display=swap', false );
+	wp_enqueue_style(	'wc_challenge-slick', get_template_directory_uri() . '/js/slick/slick.css', false);
+	wp_enqueue_style(	'wc_challenge-slick-theme', get_template_directory_uri() . '/js/slick/slick-theme.css', false);
 	wp_style_add_data( 'wc_challenge-style', 'rtl', 'replace' );
 
 	wp_enqueue_script( 'wc_challenge-navigation', get_template_directory_uri() . '/js/navigation.js', array(), _S_VERSION, true );
+	wp_enqueue_script( 'wc_challenge-jquery' , 'https://code.jquery.com/jquery-1.11.0.min.js', null, null, true);
+	wp_enqueue_script( 'wc_challenge-jquery' , 'https://code.jquery.com/jquery-migrate-1.2.1.min.js', null, null, true);
+
+	wp_enqueue_script( 'wc_challenge-slider', get_template_directory_uri() . '/js/slick/slick.js', array('jquery'), null, true );
+	wp_enqueue_script( 'wc_challenge-getslider', get_template_directory_uri() . '/js/slider.js', array('jquery'), null, true );
 
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
