@@ -23,6 +23,7 @@
 				$args = array(
 					'numberposts'	=> -1,
 					'post_type'		=> 'members',
+					'order'			=> 'ASC'
 				);
 
 				// query
@@ -32,38 +33,26 @@
 				<?php if( $the_query->have_posts() ): ?>
 					<?php while( $the_query->have_posts() ) : $the_query->the_post(); ?>
 						<div class="about__slider">
-							<?php the_post_thumbnail(); ?> 
-							<p><?php the_title(); ?></p>
+							<div class="about__slider__image">
+								<?php the_post_thumbnail(); ?>
+							</div>
+							
+							<h3><?php the_title(); ?></h3>
 							<p><?php the_field('position'); ?></p>
-						</div>
+						</div><!-- about-slider -->
 					<?php endwhile; ?>
 				<?php endif; ?>
 
 				<?php wp_reset_query();	 // Restore global post data stomped by the_post(). ?>
 
-			</div>
+			</div><!-- about-members -->
 
-		</div> 
+		</div><!-- about-container -->
 	
 </section>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 
-
-	<?php wc_challenge_post_thumbnail(); ?>
-
-	<div class="entry-content">
-		<?php
-		the_content();
-
-		wp_link_pages(
-			array(
-				'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'wc_challenge' ),
-				'after'  => '</div>',
-			)
-		);
-		?>
-	</div><!-- .entry-content -->
 
 	<?php if ( get_edit_post_link() ) : ?>
 		<footer class="entry-footer">
