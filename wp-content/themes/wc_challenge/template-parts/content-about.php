@@ -13,7 +13,7 @@
 
 		<div class="about__container"> 
 
-			<?php the_title( '<span class="about__title">', '</span>'); ?>
+			<?php the_title( '<span class="about__subtitle">', '</span>'); ?>
 			<h1 class="about__title">Meet Our <strong>Team<strong></h1>
 
 		</div> 

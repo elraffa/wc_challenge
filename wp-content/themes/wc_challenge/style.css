@@ -762,8 +762,56 @@ textarea {
 
 .about {
 	max-width: 1249px;
-	margin: 150px auto;
+	margin: 72px auto;
 	border: 1px solid red;
+	text-align: center;
+}
+
+@media screen and (min-width: 900px) {
+	.about {
+		text-align: left;
+		margin-top: 150px;
+	}
+}
+
+.about__title {
+	position: relative;
+	width: max-content;
+	max-width: 100%;
+	z-index: 1;
+	margin: 0 auto;
+}
+
+@media screen and (min-width: 900px) {
+	.about__title {
+		margin: 0;
+	}
+}
+
+.about__title::after {
+	content: '';
+	display: block;
+	width: 110%;
+	height: 25px;
+	left: -10px;
+	background-color: #E7E7E7;
+	position: absolute;
+	top: 50%;
+	z-index: -1;
+}
+
+@media screen and (min-width: 900px) {
+	.about__title::after {
+		height: 42px;
+		left: -18px;
+	}
+}
+
+.about__subtitle {
+	text-transform: uppercase;
+	letter-spacing: 2px;
+	line-height: 56px;
+	font-weight: 400;
 }
 
 /* Comments
