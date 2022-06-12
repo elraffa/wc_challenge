@@ -16,6 +16,33 @@
 			<?php the_title( '<span class="about__subtitle">', '</span>'); ?>
 			<h1 class="about__title">Meet Our <strong>Team<strong></h1>
 
+			<div class="about__members">
+
+				<?php 
+				// Members query
+				$args = array(
+					'numberposts'	=> -1,
+					'post_type'		=> 'members',
+				);
+
+				// query
+				$the_query = new WP_Query( $args );
+
+				?>
+				<?php if( $the_query->have_posts() ): ?>
+					<?php while( $the_query->have_posts() ) : $the_query->the_post(); ?>
+						<div class="about__slider">
+							<?php the_post_thumbnail(); ?> 
+							<p><?php the_title(); ?></p>
+							<p><?php the_field('position'); ?></p>
+						</div>
+					<?php endwhile; ?>
+				<?php endif; ?>
+
+				<?php wp_reset_query();	 // Restore global post data stomped by the_post(). ?>
+
+			</div>
+
 		</div> 
 	
 </section>
