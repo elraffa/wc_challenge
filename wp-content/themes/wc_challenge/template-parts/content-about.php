@@ -35,9 +35,8 @@
 						<div class="about__slider">
 							<div class="about__slider__image">
 								<?php the_post_thumbnail(); ?>
-							</div>
-							
-							<h3><?php the_title(); ?></h3>
+							</div>							
+							<h3 ><?php the_title(); ?></h3>
 							<p><?php the_field('position'); ?></p>
 						</div><!-- about-slider -->
 					<?php endwhile; ?>
