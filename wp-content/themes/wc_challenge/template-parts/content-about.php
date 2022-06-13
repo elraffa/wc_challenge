@@ -70,9 +70,8 @@
 			<?php
 			// CTA Query
 			$args = array(
-				'numberposts' => -1,
+				'numberposts' => 1,
 				'post_type'	  => 'cta',
-
 			);
 
 			$the_query = new WP_Query( $args );
