@@ -16,4 +16,4 @@
     
 ## Solution
 
-This was a fun and entertaining challenge. Firstly I ran a fresh install of Wordpress using Local. As a wp starter I am using [https://underscores.me/]Underscores. 
+This was a fun and entertaining challenge. Firstly I ran a fresh install of Wordpress using Local. As a wp starter I am using [https://underscores.me/] Underscores. 
