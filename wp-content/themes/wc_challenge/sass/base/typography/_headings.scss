@@ -19,6 +19,16 @@ h1 {
 	}
 }
 
+h2 {
+	font-size: 40px;
+	line-height: 39.68px;
+	font-weight: 400;
+
+	@media screen and (min-width: 900px) {
+		font-size: 65px;
+	}
+}
+
 h3 {
 	font-size: 30px;
 	line-height: 50px;
