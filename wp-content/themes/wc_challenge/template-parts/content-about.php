@@ -14,9 +14,13 @@
 		<div class="about__container"> 
 
 			<?php the_title( '<span class="about__subtitle">', '</span>'); ?>
-			<h1 class="about__title">Meet Our <strong>Team<strong></h1>
+			<h1 class="about__title">Meet Our <strong>Team</strong></h1>
 
 			<div class="about__members">
+				<div class="about__image">
+					<img class="about__image-line" src="<?php echo get_template_directory_uri(); ?>/img/pencil-one.png">
+					<img class="about__image-pen" src="<?php echo get_template_directory_uri(); ?>/img/pencil.png">
+				</div>
 
 				<?php 
 				// Members query
@@ -52,12 +56,46 @@
 
 		</div><!-- about-container -->
 	
-</section>
+</section><!-- about -->
 
-<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+<section class="cta">
+			<div class="cta-decoration">
+				<svg width="1449" height="33" viewBox="0 0 1449 33" fill="none" xmlns="http://www.w3.org/2000/svg">
+				<path d="M258.516 26.2132C133.71 43.9594 33.8653 13.3357 0 0.110161H1449C1410.78 11.0734 1344.59 33 1224.68 33C1074.8 33 998.859 -4.06628 848.98 15.772C699.101 35.6103 604.546 29.3456 509.992 15.772C415.437 2.19845 331.947 15.772 258.516 26.2132Z" fill="#F8F8F8"/>
+				</svg>
+			</div>
 
+		<div class="cta__container">
 
-	<?php if ( get_edit_post_link() ) : ?>
+			<?php
+			// CTA Query
+			$args = array(
+				'numberposts' => -1,
+				'post_type'	  => 'cta',
+
+			);
+
+			$the_query = new WP_Query( $args );
+
+			?>
+
+			<?php if( $the_query->have_posts()): ?>
+				<?php while ( $the_query->have_posts() ) : $the_query->the_post(); ?>
+
+				<div class="cta-image">
+					<?php the_post_thumbnail(); ?>
+				</div>
+				<h2 class="cta-title">
+					<?php the_field('heading'); ?>
+				</h2>
+				<p class="cta-copy">
+					<?php the_field('copy'); ?>
+				</p>
+				<?php endwhile; ?>
+			<?php endif; ?>
+		<div><!-- cta_container -->
+
+		<?php if ( get_edit_post_link() ) : ?>
 		<footer class="entry-footer">
 			<?php
 			edit_post_link(
@@ -79,4 +117,6 @@
 			?>
 		</footer><!-- .entry-footer -->
 	<?php endif; ?>
-</article><!-- #post-<?php the_ID(); ?> -->
+
+</section><!-- cta -->
+
